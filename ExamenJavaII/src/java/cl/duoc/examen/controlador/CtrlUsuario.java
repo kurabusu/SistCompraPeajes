@@ -30,7 +30,7 @@ public class CtrlUsuario {
         ResultSet rs = null;
 
         try {
-            String sql = "select usu_id, usu_nombre, usu_usuario from usuario where usu_usuario=? and  usu_clave=? ";
+            String sql = "select usu_id, usu_nombre, usu_usuario from tbl_usuarios where usu_usuario=? and  usu_clave=? ";
             cnx = Conexion.obtener();
             ps = cnx.prepareCall(sql); 
             String cl = DigestUtils.sha1Hex(clave);

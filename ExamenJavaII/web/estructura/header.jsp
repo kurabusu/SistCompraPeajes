@@ -19,7 +19,7 @@
             <div class="container">
                 <ul class="navbar-nav mr-auto"> 
                     <li class="nav-item">
-                        <a class="nav-link" href="listadoEdificios.jsp">Edificio</a>
+                        <a class="nav-link" href="carreteraListado.jsp">Carretera</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="departamentoBuscar.jsp">Departamento</a>
