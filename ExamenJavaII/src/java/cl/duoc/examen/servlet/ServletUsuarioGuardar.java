@@ -5,8 +5,8 @@
  */
 package cl.duoc.examen.servlet;
 
-import cl.duoc.examen.controlador.CtrlCarretera;
-import cl.duoc.examen.modelo.ClassCarretera;
+import cl.duoc.examen.controlador.CtrlUsuario;
+import cl.duoc.examen.modelo.ClassUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jose tolosa
  */
-@WebServlet(name = "ServletCarreteraGuardar", urlPatterns = {"/ServletCarreteraGuardar"})
-public class ServletCarreteraGuardar extends HttpServlet {
+@WebServlet(name = "ServletUsuarioGuardar", urlPatterns = {"/ServletUsuarioGuardar"})
+public class ServletUsuarioGuardar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,38 +36,39 @@ public class ServletCarreteraGuardar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
             String nombre = request.getParameter("nombre");
-            String costo = request.getParameter("costo");
+            String usuario = request.getParameter("usuario");
+            String clave = request.getParameter("clave");
             
-            ClassCarretera cc =  new ClassCarretera();
-            cc.setCareNombre(nombre);
-            cc.setCareCosto(Integer.parseInt(costo));
+            ClassUsuario us =  new ClassUsuario();
+            us.setUsuNombre(nombre);
+            us.setUsuUsuario(usuario);
+            us.setUsuClave(clave);
             
-            CtrlCarretera ctrl = new CtrlCarretera();
-            
-            boolean b = ctrl.ingresar(cc);
-            if(b){
+            CtrlUsuario ctrl = new CtrlUsuario();
+            boolean b = ctrl.ingresar(us);
+            if(b){ 
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<title>Bla!</title>");            
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>Guardado</h1>");
+                out.println("<h1>Ingresado</h1>");
                 out.println("</body>");
                 out.println("</html>");
-            }else{ 
+            }else{
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<title>Bla!</title>");            
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>No Guardado</h1>");
+                out.println("<h1>No ingresado</h1>");
                 out.println("</body>");
                 out.println("</html>");
             }
+            
         }
     }
 

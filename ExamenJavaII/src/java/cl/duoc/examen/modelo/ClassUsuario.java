@@ -11,6 +11,10 @@ public class ClassUsuario {
     private String usuClave;
 
     public ClassUsuario() {
+        this.usuId = 0; 
+        this.usuNombre = null;
+        this.usuUsuario = null;
+        this.usuClave = null;
     }
 
     public int getUsuId() {

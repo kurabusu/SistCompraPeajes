@@ -4,23 +4,35 @@
     Author     : jose tolosa
 --%>
 
+<%@page import="cl.duoc.examen.controlador.CtrlCarretera"%>
+<%@page import="cl.duoc.examen.modelo.ClassCarretera"%>
 <%@include file="estructura/header.jsp" %>
+<%
+    String rId = (String)request.getParameter("id");
+    if(rId == null){
+        response.sendRedirect("carreteraListado.jsp");
+    }
+    int id = Integer.parseInt(request.getParameter("id"));
+    CtrlCarretera ctrl = new CtrlCarretera();
+    ClassCarretera cc = ctrl.obtener(id);
+    
+%>
 <h1>Carretera Modificar</h1>
-<form action="./ServletCarreteraGuardar">
-    <table>
+<form action="./ServletCarreteraModificar">
+    <table> 
         <tr>
             <td>Nombre</td>
-            <td><input type="text" id="nombre" name="nombre"></td>
-        </tr>
+            <td><input type="text" id="nombre" name="nombre" value="<%=cc.getCareNombre() %>"></td>
+        </tr> 
         <tr>
             <td>Costo</td>
-            <td><input type="number" id="costo" name="costo"></td>
+            <td><input type="number" id="costo" name="costo" value="<%=cc.getCareCosto() %>"></td>
         </tr>
         <tr>
-            <td></td>
-            <td>
+            <td><input type="hidden" id="id" name="id" value="<%=cc.getCareId() %>"></td>
+            <td> 
                 <a href="carreteraListado.jsp">Cancelar</a>
-                <button>Guardar</button>
+                <button>Modificar</button>
             </td>
         </tr>
     </table>

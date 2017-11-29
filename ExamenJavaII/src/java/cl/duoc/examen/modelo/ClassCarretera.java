@@ -11,6 +11,9 @@ public class ClassCarretera {
     private int careCosto;
 
     public ClassCarretera() {
+        this.careId = 0;
+        this.careNombre = null;
+        this.careCosto = 0;
     }
 
     public int getCareId() {

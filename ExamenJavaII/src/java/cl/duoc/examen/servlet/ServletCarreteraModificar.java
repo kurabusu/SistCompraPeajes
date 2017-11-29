@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jose tolosa
  */
-@WebServlet(name = "ServletCarreteraGuardar", urlPatterns = {"/ServletCarreteraGuardar"})
-public class ServletCarreteraGuardar extends HttpServlet {
+@WebServlet(name = "ServletCarreteraModificar", urlPatterns = {"/ServletCarreteraModificar"})
+public class ServletCarreteraModificar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,17 +36,18 @@ public class ServletCarreteraGuardar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+            String id = request.getParameter("id");
             String nombre = request.getParameter("nombre");
             String costo = request.getParameter("costo");
             
             ClassCarretera cc =  new ClassCarretera();
+            cc.setCareId(Integer.parseInt(id)); 
             cc.setCareNombre(nombre);
             cc.setCareCosto(Integer.parseInt(costo));
             
             CtrlCarretera ctrl = new CtrlCarretera();
             
-            boolean b = ctrl.ingresar(cc);
+            boolean b = ctrl.modificar(cc);
             if(b){
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
@@ -54,7 +55,7 @@ public class ServletCarreteraGuardar extends HttpServlet {
                 out.println("<title>Bla!</title>");            
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>Guardado</h1>");
+                out.println("<h1>Modificado</h1>");
                 out.println("</body>");
                 out.println("</html>");
             }else{ 
@@ -64,7 +65,7 @@ public class ServletCarreteraGuardar extends HttpServlet {
                 out.println("<title>Bla!</title>");            
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>No Guardado</h1>");
+                out.println("<h1>No Modificado</h1>");
                 out.println("</body>");
                 out.println("</html>");
             }

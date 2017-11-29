@@ -18,12 +18,16 @@
         <div class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <ul class="navbar-nav mr-auto"> 
-                    <li class="nav-item">
-                        <a class="nav-link" href="carreteraListado.jsp">Carretera</a>
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="bienvenido.jsp">Principal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="departamentoBuscar.jsp">Departamento</a>
-                    </li> 
+                        <a class="nav-link" href="carreteraListado.jsp">Carreteras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuarioListado.jsp">Usuarios</a>
+                    </li>
+                   
 
                 </ul>
                 <form name="frm_logout" action="./ServletIndex" method="POST"  class="form-inline my-2 my-lg-0">
