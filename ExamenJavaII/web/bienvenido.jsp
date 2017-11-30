@@ -5,7 +5,12 @@
 --%>
 
 <%@include file="estructura/header.jsp" %>
-<h1>Bienvenido</h1>
+<div class="row">
+    <div class="col">
+        <h1>Bienvenido</h1>
+    </div>
+</div>
+        
 
 
 

@@ -7,9 +7,7 @@ package cl.duoc.examen.modelo;
 public class ClassCompra {
     
     private int comId;
-    private String rut;
-    private String nombre;
-    private String direccion;
+    private int empId;
     private String CompradorPor;
     private int total;
     private int opcionPago;
@@ -26,30 +24,14 @@ public class ClassCompra {
         this.comId = comId;
     }
 
-    public String getRut() {
-        return rut;
+    public int getEmpId() {
+        return empId;
     }
 
-    public void setRut(String rut) {
-        this.rut = rut;
+    public void setEmpId(int empId) {
+        this.empId = empId;
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
+    
     public String getCompradorPor() {
         return CompradorPor;
     }

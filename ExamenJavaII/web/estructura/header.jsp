@@ -10,9 +10,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sistema de Inmobiliaria</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/master.css" type="text/css" >
+        <title>Sistema de Peajes</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/master.css"> 
     </head> 
     <body> 
         <div class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,8 +21,14 @@
                     <li class="nav-item"> 
                         <a class="nav-link" href="bienvenido.jsp">Principal</a>
                     </li>
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="pedidosListado.jsp">Pedidos</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="carreteraListado.jsp">Carreteras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="empresaListado.jsp">Empresas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="usuarioListado.jsp">Usuarios</a>

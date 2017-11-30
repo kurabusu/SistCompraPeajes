@@ -18,27 +18,37 @@
     ClassUsuario us = ctrl.obtener(id);
 
 %>
-<h1>Usuario modificar</h1>
-<form action="./ServletUsuarioModificar">
-    <table> 
-        <tr>
-            <td>Nombre</td>
-            <td><input type="text" id="nombre" name="nombre" value="<%=us.getUsuNombre() %>"></td>
-        </tr>
-        <tr>
-            <td>Usuario</td>
-            <td><input type="text" id="usuario" name="usuario" value="<%=us.getUsuUsuario() %>" readonly></td>
-        </tr>
-        <tr>
-            <td><input type="hidden" id="id" name="id" value="<%=us.getUsuId() %>"></td>
-            <td> 
-                <a href="usuarioListado.jsp">Cancelar</a>
-                <button>Modificar</button>
-            </td>
-        </tr>
-    </table>
-</form>
-
-
+<div class="row">
+    <div class="col">
+        <h1 class="h1">Usuario Modificar</h1>
+    </div>
+</div>
+<div class="row pt-25">
+    <form action="./ServletUsuarioModificar" method="POST" class="col">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" required value="<%=us.getUsuNombre() %>"/>
+                </div>
+            </div>
+            <div class="w-100"></div>
+            
+            <div class="col">
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <input type="text" id="usuario" name="usuario" class="form-control" value="<%=us.getUsuUsuario() %>" readonly/>
+                </div> 
+            </div>
+        </div>
+        
+        <div class="w-100 text-center">
+            <input type="hidden" id="id" name="id" value="<%=us.getUsuId() %>">
+            <a href="usuarioListado.jsp" class="btn btn-link">volver</a>
+            <button class="btn btn-success">Guardar</button>
+        </div>
+            
+    </form>
+</div>
 
 <%@include file="estructura/footer.jsp" %>

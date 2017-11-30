@@ -17,27 +17,35 @@
     ClassCarretera cc = ctrl.obtener(id);
     
 %>
-<h1>Carretera Modificar</h1>
-<form action="./ServletCarreteraModificar">
-    <table> 
-        <tr>
-            <td>Nombre</td>
-            <td><input type="text" id="nombre" name="nombre" value="<%=cc.getCareNombre() %>"></td>
-        </tr> 
-        <tr>
-            <td>Costo</td>
-            <td><input type="number" id="costo" name="costo" value="<%=cc.getCareCosto() %>"></td>
-        </tr>
-        <tr>
-            <td><input type="hidden" id="id" name="id" value="<%=cc.getCareId() %>"></td>
-            <td> 
-                <a href="carreteraListado.jsp">Cancelar</a>
-                <button>Modificar</button>
-            </td>
-        </tr>
-    </table>
-</form>
-    
 
+<div class="row"> 
+    <div class="col">
+        <h1>Carretera Modificar</h1>
+    </div>
+</div>
+<div class="row pt-25">
+    <form action="./ServletCarreteraModificar" method="POST" class="col">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" value="<%=cc.getCareNombre() %>">
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Costo</label> 
+                    <input type="number" id="costo" name="costo" class="form-control" value="<%=cc.getCareCosto() %>">
+                </div>
+            </div>
+        </div>
+        <div class="w-100 text-center">
+            <input type="hidden" id="id" name="id" value="<%=cc.getCareId() %>">
+            <a href="carreteraListado.jsp">Cancelar</a>
+            <button class="btn btn-success">Guardar</button>
+        </div>
+    </form>
+</div>
 
 <%@include file="estructura/footer.jsp" %>

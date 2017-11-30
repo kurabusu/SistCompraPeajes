@@ -5,8 +5,10 @@
  */
 package cl.duoc.examen.servlet;
 
-import cl.duoc.examen.controlador.CtrlUsuario;
-import cl.duoc.examen.modelo.ClassUsuario;
+import cl.duoc.examen.controlador.CtrlCarretera;
+import cl.duoc.examen.controlador.CtrlEmpresa;
+import cl.duoc.examen.modelo.ClassCarretera;
+import cl.duoc.examen.modelo.ClassEmpresa;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,12 +16,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
  *
  * @author jose tolosa
  */
-@WebServlet(name = "ServletUsuarioModificar", urlPatterns = {"/ServletUsuarioModificar"})
-public class ServletUsuarioModificar extends HttpServlet {
+@WebServlet(name = "ServletEmpresaModificar", urlPatterns = {"/ServletEmpresaModificar"})
+public class ServletEmpresaModificar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,15 +39,20 @@ public class ServletUsuarioModificar extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String id = request.getParameter("id");
+            String rut = request.getParameter("rut");
             String nombre = request.getParameter("nombre");
+            String direccion = request.getParameter("direccion");
             
-            ClassUsuario us =  new ClassUsuario();
-            us.setUsuId(Integer.parseInt(id)); 
-            us.setUsuNombre(nombre);
+            ClassEmpresa ce =  new ClassEmpresa();
+            ce.setEmpId(Integer.parseInt(id)); 
+            ce.setEmpRut(rut); 
+            ce.setEmpNombre(nombre);
+            ce.setEmpDireccion(direccion);
             
-            CtrlUsuario ctrl = new CtrlUsuario();
-            boolean b = ctrl.modificar(us);
-            if(b){ 
+            CtrlEmpresa ctrl = new CtrlEmpresa();
+            
+            boolean b = ctrl.modificar(ce);
+            if(b){
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
@@ -54,7 +62,7 @@ public class ServletUsuarioModificar extends HttpServlet {
                 out.println("<h1>Modificado</h1>");
                 out.println("</body>");
                 out.println("</html>");
-            }else{
+            }else{ 
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
@@ -64,7 +72,8 @@ public class ServletUsuarioModificar extends HttpServlet {
                 out.println("<h1>No Modificado</h1>");
                 out.println("</body>");
                 out.println("</html>");
-            }        }
+            }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

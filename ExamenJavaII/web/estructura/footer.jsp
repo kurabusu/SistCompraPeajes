@@ -6,7 +6,8 @@
             <span class="text-muted">Sistema desarrollado por <a href="https://www.twitch.tv/theamargochannel" >@TheAmargoChannel</a>.</span>
         </div>
     </footer>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/master.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/master.js"></script>
     </body>
 </html>

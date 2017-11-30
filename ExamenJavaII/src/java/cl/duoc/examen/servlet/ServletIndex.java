@@ -29,6 +29,8 @@ public class ServletIndex extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+           
+            
             RequestDispatcher dispatcher;
             HttpSession session = request.getSession(true);
             
@@ -46,6 +48,7 @@ public class ServletIndex extends HttpServlet {
                 response.sendRedirect("index.jsp");
                 session.setAttribute("error_login", "Error. Usuario o contraseña incorrecta.");
             }    
+            
         }
     }
 

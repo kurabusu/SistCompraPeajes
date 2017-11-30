@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/src/java/cl/duoc/examen/controlador/CtrlUsuario.java</file>
-            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/web/bienvenido.jsp</file>
+            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/web/WEB-INF/web.xml</file>
+            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/web/WEB-INF/log4j.properties</file>
             <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/src/java/cl/duoc/examen/servlet/ServletIndex.java</file>
-            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/web/carreteraAgregar.jsp</file>
-            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/web/estructura/header.jsp</file>
-            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/src/java/cl/duoc/examen/modelo/ClassCarretera.java</file>
-            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/web/newjsperror404.jsp</file>
-            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/web/index.jsp</file>
-            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/web/carreteraListado.jsp</file>
+            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/src/java/cl/duoc/examen/util/log4jLogs.java</file>
+            <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/src/java/cl/duoc/examen/servlet/ContextListener.java</file>
             <file>file:/D:/dev/GIT/SistCompraPeajes/ExamenJavaII/src/java/cl/duoc/examen/servlet/ServletCarreteraGuardar.java</file>
         </group>
     </open-files>

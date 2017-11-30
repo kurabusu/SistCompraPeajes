@@ -5,35 +5,49 @@
 --%>
 
 <%@include file="estructura/header.jsp" %>
-<h1>Usuario agregar</h1>
-<form action="./ServletUsuarioGuardar">
-    <table>
-        <tr>
-            <td>Nombre</td>
-            <td><input type="text" id="nombre" name="nombre" ></td>
-        </tr>
-        <tr>
-            <td>Usuario</td>
-            <td><input type="text" id="usuario" name="usuario" ></td>
-        </tr>
-        <tr>
-            <td>Clave</td>
-            <td><input type="password" id="clave" name="clave" ></td>
-        </tr>
-        <tr>
-            <td>Repetir Clave</td>
-            <td><input type="password" id="rClave" name="rClave" ></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <a href="usuarioAgregar.jsp.jsp">Cancelar</a>
-                <button >Guardar</button>
-            </td>
-        </tr>
-    </table>
-</form>
-    
 
+<div class="row">
+    <div class="col">
+        <h1 class="h1">Usuario agregar</h1>
+    </div>
+</div>
+<div class="row pt-25">
+    <form action="./ServletUsuarioGuardar" method="POST" class="col">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" required />
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <input type="text" id="usuario" name="usuario" class="form-control" required />
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Clave</label>
+                    <input type="password" id="clave" name="clave" class="form-control" required />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Repetir Clave</label>
+                    <input type="password" id="rClave" name="rClave" class="form-control" required />
+                </div>
+            </div>
+        </div>
+        
+        <div class="w-100 text-center">
+            <a href="usuarioListado.jsp" class="btn btn-link">volver</a>
+            <button class="btn btn-success">Guardar</button>
+        </div>  
+        
+    </form>
+</div>
 
 <%@include file="estructura/footer.jsp" %>

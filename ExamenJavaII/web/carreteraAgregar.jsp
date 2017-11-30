@@ -5,29 +5,35 @@
 --%>
 
 <%@include file="estructura/header.jsp" %>
-<%%>
-<h1>Carretera Agregar</h1>
-<form action="./ServletCarreteraGuardar">
-    <table>
-        <tr>
-            <td>Nombre</td>
-            <td><input type="text" id="nombre" name="nombre" value="<%%>"></td>
-        </tr>
-        <tr>
-            <td>Costo</td>
-            <td><input type="number" id="costo" name="costo" value="<%%>"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="hidden" id="idC" name="idC">
-                <a href="carreteraListado.jsp">Cancelar</a>
-                <button>Guardar</button>
-            </td>
-        </tr>
-    </table>
-</form>
-    
+<div class="row pt-25"> 
+    <div class="col">
+        <h1 class="h1">Carretera Agregar</h1>
+    </div>
+</div>
+<div class="row pt-25">
+    <form action="./ServletCarreteraGuardar" method="POST" class="col">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control">
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Costo</label> 
+                    <input type="number" id="costo" name="costo" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 text-center">
+            <a href="carreteraListado.jsp">Cancelar</a>
+            <button class="btn btn-success">Guardar</button>
+        </div>
+    </form>
+</div> 
 
 
 <%@include file="estructura/footer.jsp" %>

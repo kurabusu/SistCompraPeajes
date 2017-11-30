@@ -12,27 +12,34 @@
     CtrlUsuario ctrl = new CtrlUsuario();
     List<ClassUsuario> lus = ctrl.obtenerLista(new ClassUsuario());
 %>
-
-<h1>Usuarios</h1>
-<a href="usuarioAgregar.jsp">Agregar</a>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Usuario</th>
-            <th>Opciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% for (ClassUsuario us : lus) { %>
-        <tr>
-            <td><%=us.getUsuNombre() %></td>
-            <td><%=us.getUsuUsuario() %></td> 
-            <td><a href="usuarioModificar.jsp?id=<%=us.getUsuId() %>">modificar</a></td>
-        </tr>
-        <% }%>
-    </tbody>
-</table>
+<div class="row">
+    <div class="col">
+        <h1 class="h1">Usuarios</h1>
+        <a href="usuarioAgregar.jsp">Agregar</a>
+    </div>
+</div>
+        
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (ClassUsuario us : lus) { %>
+                <tr>
+                    <td><%=us.getUsuNombre() %></td>
+                    <td><%=us.getUsuUsuario() %></td> 
+                    <td><a href="usuarioModificar.jsp?id=<%=us.getUsuId() %>">modificar</a></td>
+                </tr>
+                <% }%>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <%@include file="estructura/footer.jsp" %>
