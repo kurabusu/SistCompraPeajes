@@ -39,8 +39,10 @@ public class ClassCarretera {
     public void setCareCosto(int careCosto) {
         this.careCosto = careCosto;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "{ \"careId\": \""+ careId + "\", \"careNombre\":\"" + careNombre + "\", \"careCosto\":\"" + careCosto + "\"}"; 
+    }
     
 }

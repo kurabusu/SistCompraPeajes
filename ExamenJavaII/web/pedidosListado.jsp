@@ -9,7 +9,7 @@
 
 <div class="row pb-25">
     <div class="col form-inline">
-        <h1 class="h1">Usuarios</h1>
+        <h1 class="h1">Pedidos</h1>
         <a href="pedidosAgregar.jsp">Nuevo</a>
     </div>
 </div>
@@ -17,9 +17,11 @@
     <div class="col">
         <label>Rut Cliente</label>
         <div class="form-group form-inline">
-            <input type="text" name="rut" id="rut" placeholder="Rut Cliente" class="form-control">
+            <input type="text" name="rut" id="rut" placeholder="Rut Cliente" class="form-control col">
             &nbsp;
-            <input type="button" value="Buscar" class="btn btn-info"/>
+            <button type="button" value="Buscar" class="btn btn-info"/>
+                <i class="fa fa-search" aria-hidden="true"></i> Buscar
+            </button>
         </div>
     </div>
 </div>

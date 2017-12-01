@@ -13,7 +13,7 @@
     List<ClassUsuario> lus = ctrl.obtenerLista(new ClassUsuario());
 %>
 <div class="row">
-    <div class="col">
+    <div class="col form-inline">
         <h1 class="h1">Usuarios</h1>
         <a href="usuarioAgregar.jsp">Agregar</a>
     </div>

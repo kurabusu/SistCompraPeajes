@@ -23,9 +23,15 @@
     <form action="./ServletPedidoGuardar" method="POST" class="col">
         <div class="row">
             <div class="col">
+                <label>Rut</label>
                 <div class="form-group">
-                    <label>Rut</label>
-                    <input type="text" id="rut" name="rut" class="form-control" required>
+                    <div class="form-inline"> 
+                        <input type="hidden" id="idE" name="idE" > &nbsp;
+                        <input type="text" id="rut" name="rut" class="form-control col" placeholder="Rut" required> &nbsp;
+                        <button type="button" id="bRutPButton" name="bRutP" class="btn btn-info"> 
+                            <i class="fa fa-search" aria-hidden="true"></i>  Buscar
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="w-100"></div>
@@ -33,7 +39,7 @@
             <div class="col">
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" readonly>
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" readonly>
                 </div>
             </div>
             <div class="w-100"></div>
@@ -41,7 +47,7 @@
             <div class="col">
                 <div class="form-group">
                     <label>Dirección</label>
-                    <input type="text" id="direccion" name="direccion" class="form-control" readonly>
+                    <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Dirección" readonly>
                 </div>
             </div>
             <div class="w-100"></div>
@@ -49,7 +55,7 @@
             <div class="col">
                 <div class="form-group">
                     <label>Comprado Por</label>
-                    <input type="text" id="comprador" name="comprador" class="form-control" required>
+                    <input type="text" id="comprador" name="comprador" class="form-control" placeholder="Comprado Por" required>
                 </div>
             </div>
             <div class="w-100"></div>
@@ -101,14 +107,14 @@
                 <label>Seleccionar carretera y agregue al pedido.</label>
                 <div class="form-group">
                     <div class="form-inline">
-                        <select id="carreteras" name="carreteras" class="form-control col"> 
+                        <select id="selCarreteras" name="selCarreteras" class="form-control col"> 
                             <option value="">Selecionar</option>
                             <%for (ClassCarretera c : lcc) { %>
                             <option value="<%=c.getCareId() %>"><%=c.getCareNombre() %></option>
                             <% }%>
                         </select>
                         &nbsp;
-                        <input type="button" value="Agregar" class="btn btn-primary">
+                        <input id="aCarPButton" type="button" value="Agregar" class="btn btn-primary">
                     </div>
                 </div>
                 <div class="form-group form-inline"> 
@@ -126,22 +132,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>Cerretera</th>
-                            <th>Cantidad</th>
-                            <th></th>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
             <div class="w-100"></div>
             
             <div class="col-7">
-                <p>Total a pagar $<span>0</span></p>
+                <p>Total a pagar $<span class="total">0</span></p>
             </div>
             <div class="col">
-                <input type="hidden" name="total"> 
-                <button>Haber Pedido</button>
+                <input type="hidden" id="precioTotal" name="precioTotal"> 
+                <a href="pedidosListado.jsp" class="btn btn-link">volver</a>
+                <button class="btn btn-success">Hacer Pedido</button>
             </div>
             
         </div>

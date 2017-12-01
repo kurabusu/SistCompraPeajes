@@ -11,6 +11,13 @@ public class ClassEmpresa {
     private String empNombre;
     private String empDireccion;
 
+    public ClassEmpresa(int empId, String empRut, String empNombre, String empDireccion) {
+        this.empId = empId;
+        this.empRut = empRut;
+        this.empNombre = empNombre;
+        this.empDireccion = empDireccion;
+    }
+
     public ClassEmpresa() {
         this.empId = 0;
         this.empRut = null;
@@ -49,8 +56,10 @@ public class ClassEmpresa {
     public void setEmpDireccion(String empDireccion) {
         this.empDireccion = empDireccion;
     }
-    
-    
-    
+
+    @Override
+    public String toString() { 
+        return "{ \"empId\":\"" + empId + "\", \"empRut\":\"" + empRut + "\", \"empNombre\":\"" + empNombre + "\", \"empDireccion\":\"" + empDireccion + "\"} ";
+    }
     
 }

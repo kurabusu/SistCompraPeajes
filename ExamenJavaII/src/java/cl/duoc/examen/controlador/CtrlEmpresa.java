@@ -114,9 +114,9 @@ public class CtrlEmpresa {
         int i = 1;
         try {
             String sql = "SELECT emp_id, emp_rut, emp_nombre, emp_direccion FROM tbl_empresas where 1=1 ";
-            if(ce.getEmpId() > 0) sql += " emp_id=? ";
-            if(ce.getEmpRut() != null) sql += " emp_rut like concat(?,'%') ";
-            if(ce.getEmpNombre() != null) sql += " emp_nombre like concat(?, '%')";
+            if(ce.getEmpId() > 0) sql += " and emp_id=? ";
+            if(ce.getEmpRut() != null) sql += " and emp_rut like concat(?,'%') ";
+            if(ce.getEmpNombre() != null) sql += " and emp_nombre like concat(?, '%')";
             
             cnx = Conexion.obtener();
             ps = cnx.prepareCall(sql);

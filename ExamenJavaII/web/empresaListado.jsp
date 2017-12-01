@@ -13,28 +13,36 @@
     List<ClassEmpresa> lce = ctrl.obtenerLista(new ClassEmpresa());
 %>
 
-<h1>Usuarios</h1>
-<a href="empresaAgregar.jsp">Agregar</a>
+<div class="row pb-25">
+    <div class="col form-inline">
+        <h1>Usuarios</h1>
+        <a href="empresaAgregar.jsp">Agregar</a>
+    </div>
+</div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Rut</th>
-            <th>Nombre</th>
-            <th>Dirección</th>
-            <th>Opciones</th>
-        </tr>
-    </thead>
-    <tbody> 
-        <% for (ClassEmpresa ce : lce) { %>
-        <tr>
-            <td><%=ce.getEmpRut() %></td>
-            <td><%=ce.getEmpNombre() %></td>
-            <td><%=ce.getEmpDireccion() %></td> 
-            <td><a href="empresaModificar.jsp?id=<%=ce.getEmpId() %>">modificar</a></td>
-        </tr>
-        <% }%>
-    </tbody>
-</table>
-
+<div class="row">
+    <div class="col"> 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Rut</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody> 
+                <% for (ClassEmpresa ce : lce) { %>
+                <tr>
+                    <td><%=ce.getEmpRut() %></td>
+                    <td><%=ce.getEmpNombre() %></td>
+                    <td><%=ce.getEmpDireccion() %></td> 
+                    <td><a href="empresaModificar.jsp?id=<%=ce.getEmpId() %>">modificar</a></td>
+                </tr>
+                <% }%>
+            </tbody>
+        </table>
+    </div>
+</div>
+        
 <%@include file="estructura/footer.jsp" %>

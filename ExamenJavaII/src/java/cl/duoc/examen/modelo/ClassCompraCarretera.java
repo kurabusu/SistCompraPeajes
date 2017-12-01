@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cl.duoc.examen.modelo;
 
 /**
@@ -12,6 +7,7 @@ package cl.duoc.examen.modelo;
 public class ClassCompraCarretera {
     
     private int carreteraId;
+    private String carreteraNombre;
     private int compraId;
     private int cantidad;
     private int total; 
@@ -21,6 +17,14 @@ public class ClassCompraCarretera {
 
     public int getCarreteraId() {
         return carreteraId;
+    }
+
+    public String getCarreteraNombre() {
+        return carreteraNombre;
+    } 
+
+    public void setCarreteraNombre(String carreteraNombre) {
+        this.carreteraNombre = carreteraNombre;
     }
 
     public void setCarreteraId(int carreteraId) {
