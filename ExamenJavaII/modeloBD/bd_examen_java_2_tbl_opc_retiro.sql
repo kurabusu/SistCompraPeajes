@@ -18,31 +18,27 @@ USE `bd_examen_java_2`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_compra`
+-- Table structure for table `tbl_opc_retiro`
 --
 
-DROP TABLE IF EXISTS `tbl_compra`;
+DROP TABLE IF EXISTS `tbl_opc_retiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_compra` (
-  `com_id` int(11) NOT NULL AUTO_INCREMENT,
-  `emp_Id` int(11) NOT NULL,
-  `comprador` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `com_total` int(11) NOT NULL,
-  `com_opcion_pago` int(11) NOT NULL,
-  `com_opcion_retiro` int(11) NOT NULL,
-  PRIMARY KEY (`com_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+CREATE TABLE `tbl_opc_retiro` (
+  `opc_retiro_id` int(11) NOT NULL AUTO_INCREMENT,
+  `opc_retiro_descripcion` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`opc_retiro_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_compra`
+-- Dumping data for table `tbl_opc_retiro`
 --
 
-LOCK TABLES `tbl_compra` WRITE;
-/*!40000 ALTER TABLE `tbl_compra` DISABLE KEYS */;
-INSERT INTO `tbl_compra` VALUES (2,1,'jose tolosa',63500,2,2),(3,1,'jose tolosa',3600,1,1),(4,1,'jose tolosa',48000,2,2),(5,1,'jose',7100,1,2),(6,1,'jose tolosa',36000,1,2),(7,1,'asd asd asdas',74000,2,1),(8,2,'esteban',36000,2,2);
-/*!40000 ALTER TABLE `tbl_compra` ENABLE KEYS */;
+LOCK TABLES `tbl_opc_retiro` WRITE;
+/*!40000 ALTER TABLE `tbl_opc_retiro` DISABLE KEYS */;
+INSERT INTO `tbl_opc_retiro` VALUES (1,'Oficina'),(2,'Envío Cliente');
+/*!40000 ALTER TABLE `tbl_opc_retiro` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-02 19:56:52
+-- Dump completed on 2017-12-02 19:56:53

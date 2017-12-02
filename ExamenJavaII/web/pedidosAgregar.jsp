@@ -20,7 +20,7 @@
     </div>
 </div>
 <div class="row">
-    <form action="./ServletPedidoGuardar" method="POST" class="col">
+    <form id="form-pedido" action="./ServletPedidoGuardar" method="POST" class="col">
         <div class="row">
             <div class="col">
                 <label>Rut</label>
@@ -77,8 +77,8 @@
                     </label>
                 </div>
                 <div class="form-group">
-                    <label class="custom-control custom-radio">
-                        <input id="optPago3" name="optPago" type="radio" value="2" class="custom-control-input">
+                    <label class="custom-control custom-radio"> 
+                        <input id="optPago3" name="optPago" type="radio" value="3" class="custom-control-input">
                         <span class="custom-control-indicator"></span>
                         <span class="custom-control-description">Orden de Compra</span>
                     </label>

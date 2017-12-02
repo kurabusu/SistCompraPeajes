@@ -6,11 +6,12 @@
 package cl.duoc.examen.servlet;
 
 import cl.duoc.examen.controlador.CtrlCompra;
-import cl.duoc.examen.controlador.CtrlCompraCarretera;
+import cl.duoc.examen.controlador.CtrlEmpresa;
 import cl.duoc.examen.modelo.ClassCompra;
-import cl.duoc.examen.modelo.ClassCompraCarretera;
+import cl.duoc.examen.modelo.ClassEmpresa;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +22,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jose tolosa
  */
-@WebServlet(name = "ServletPedidoGuardar", urlPatterns = {"/ServletPedidoGuardar"})
-public class ServletPedidoGuardar extends HttpServlet {
+@WebServlet(name = "ServletAjaxBuscarPedidos", urlPatterns = {"/ServletAjaxBuscarPedidos"})
+public class ServletAjaxBuscarPedidos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,47 +38,37 @@ public class ServletPedidoGuardar extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            CtrlCompra ctrl =  new CtrlCompra();
-            CtrlCompraCarretera ctrlCcc = new CtrlCompraCarretera();
             
-            ClassCompra cc = new ClassCompra();
-            ClassCompraCarretera ccc = new ClassCompraCarretera();
-            
-            
-            String idE = request.getParameter("idE");
-            String comprador = request.getParameter("comprador");
-            String optPago = request.getParameter("optPago"); 
-            String optRetiro = request.getParameter("optRetiro");
-            String total = request.getParameter("precioTotal");
-            
-            cc.setEmpId(Integer.parseInt(idE));
-            cc.setCompradorPor(comprador);
-            cc.setOpcionPago(Integer.parseInt(optPago));
-            cc.setOpcionRetiro(Integer.parseInt(optRetiro));
-            cc.setTotal(Integer.parseInt(total));
-            
-            int idCompra = ctrl.ingresar(cc); 
-            
-            String[] carreteras = request.getParameterValues("carreteras");
-            String[] cantidades = request.getParameterValues("cantidades");
-            
-            for (int i = 0; i < carreteras.length; i++) {
-                String idCare = carreteras[i];
-                String cant = cantidades[i];
-                ccc = new ClassCompraCarretera();
+            String rut =  request.getParameter("rut");
+             
+            if(rut != null){
+                CtrlEmpresa ctrle = new CtrlEmpresa();
+                List<ClassEmpresa> le = ctrle.obtenerLista(new ClassEmpresa(0, rut, null, null)); 
                 
-                ccc.setCarreteraId(Integer.parseInt(idCare));
-                ccc.setCompraId(idCompra);
-                ccc.setCantidad(Integer.parseInt(cant));
-                ccc.setTotal(0);
-                ctrlCcc.ingresar(ccc);
+                if(le.size() > 0){
+                    CtrlCompra ctrl = new CtrlCompra();
+                    ClassCompra c = new ClassCompra();
+                    c.setEmpId(le.get(0).getEmpId());
+                    
+                    List<ClassCompra> lista = ctrl.obtenerLista(c);
+                    int i = 0;
+                    out.println("[");
+                    for (ClassCompra classCompra : lista) {
+                        if(i > 0) out.println(",");
+                        
+                        out.println(classCompra.toStringListaCorta()); 
+                        i++;
+                    }
+                    out.println("]");
+                    
+                }else{
+                     out.println("{\"error\": \"Rut no encontrado\"}");
+                }
+                
+                
+                
             }
             
-            
-            if(idCompra > 0){
-                response.sendRedirect("pedidosBoleta.jsp?id="+idCompra); 
-            }
         }
     }
 

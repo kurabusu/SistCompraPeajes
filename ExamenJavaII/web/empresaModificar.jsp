@@ -25,12 +25,12 @@
 </div>
 
 <div class="row pt-25">
-    <form action="./ServletEmpresaModificar" method="POST" class="col">
+    <form id="form-empresa" name="form-empresa" action="./ServletEmpresaModificar" method="POST" class="col">
         <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label>Rut</label>
-                    <input type="text" id="rut" name="rut" class="form-control" required value="<%=ce.getEmpRut() %>">
+                    <input type="text" id="rut" name="rut" class="form-control" value="<%=ce.getEmpRut() %>" required >
                 </div>
             </div>
             <div class="w-100"></div>
@@ -38,7 +38,7 @@
             <div class="col">
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text"  id="nombre" name="nombre" class="form-control" required value="<%=ce.getEmpNombre() %>">
+                    <input type="text"  id="nombre" name="nombre" class="form-control" value="<%=ce.getEmpNombre() %>" required >
                 </div>
             </div>
             <div class="w-100"></div>
@@ -46,7 +46,7 @@
             <div class="col">
                 <div class="form-group">
                     <label>Dirección</label>
-                    <input type="text" id="direccion" name="direccion" class="form-control" required value="<%=ce.getEmpDireccion() %>">
+                    <input type="text" id="direccion" name="direccion" class="form-control" value="<%=ce.getEmpDireccion() %>" required>
                 </div>
             </div>
             <div class="w-100"></div>

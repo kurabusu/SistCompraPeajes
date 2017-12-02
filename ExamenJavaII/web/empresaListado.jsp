@@ -14,9 +14,9 @@
 %>
 
 <div class="row pb-25">
-    <div class="col form-inline">
-        <h1>Usuarios</h1>
-        <a href="empresaAgregar.jsp">Agregar</a>
+    <div class="col">
+        <h1 class="h1 float-left">Empresas</h1>
+        <a href="empresaAgregar.jsp" class="btn btn-primary float-right">Agregar</a>
     </div>
 </div>
 
@@ -28,7 +28,7 @@
                     <th>Rut</th>
                     <th>Nombre</th>
                     <th>Dirección</th>
-                    <th>Opciones</th>
+                    <th style="width: 200px;">Opciones</th>
                 </tr>
             </thead>
             <tbody> 
@@ -37,7 +37,7 @@
                     <td><%=ce.getEmpRut() %></td>
                     <td><%=ce.getEmpNombre() %></td>
                     <td><%=ce.getEmpDireccion() %></td> 
-                    <td><a href="empresaModificar.jsp?id=<%=ce.getEmpId() %>">modificar</a></td>
+                    <td><a href="empresaModificar.jsp?id=<%=ce.getEmpId() %>" class="btn btn-link" title="Modificar">Modificar</a></td>
                 </tr>
                 <% }%>
             </tbody>

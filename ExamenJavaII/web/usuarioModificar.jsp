@@ -24,12 +24,12 @@
     </div>
 </div>
 <div class="row pt-25">
-    <form action="./ServletUsuarioModificar" method="POST" class="col">
+    <form id="form-usuario" name="form-usuario" action="./ServletUsuarioModificar" method="POST" class="col">
         <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" required value="<%=us.getUsuNombre() %>"/>
+                    <input type="text" id="nombre" name="nombre" class="form-control" value="<%=us.getUsuNombre() %>" required/>
                 </div>
             </div>
             <div class="w-100"></div>
@@ -37,7 +37,7 @@
             <div class="col">
                 <div class="form-group">
                     <label>Usuario</label>
-                    <input type="text" id="usuario" name="usuario" class="form-control" value="<%=us.getUsuUsuario() %>" readonly/>
+                    <input type="text" id="usuarioBd" name="usuarioBd" class="form-control" value="<%=us.getUsuUsuario() %>" readonly/>
                 </div> 
             </div>
         </div>

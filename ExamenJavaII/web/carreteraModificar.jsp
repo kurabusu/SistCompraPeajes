@@ -24,19 +24,19 @@
     </div>
 </div>
 <div class="row pt-25">
-    <form action="./ServletCarreteraModificar" method="POST" class="col">
+    <form id="form-carretera" name="form-carretera" action="./ServletCarreteraModificar" method="POST" class="col">
         <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" value="<%=cc.getCareNombre() %>">
+                    <input type="text" id="nombre" name="nombre" class="form-control" value="<%=cc.getCareNombre() %>" required>
                 </div>
             </div>
             <div class="w-100"></div>
             <div class="col">
                 <div class="form-group">
                     <label>Costo</label> 
-                    <input type="number" id="costo" name="costo" class="form-control" value="<%=cc.getCareCosto() %>">
+                    <input type="number" id="costo" name="costo" class="form-control" value="<%=cc.getCareCosto() %>" required>
                 </div>
             </div>
         </div>

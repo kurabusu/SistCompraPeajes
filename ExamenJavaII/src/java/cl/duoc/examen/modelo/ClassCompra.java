@@ -11,7 +11,10 @@ public class ClassCompra {
     private String CompradorPor;
     private int total;
     private int opcionPago;
+    private String opcionPagoDescr;
     private int opcionRetiro;
+    private String opcionRetiroDescr;
+    private String listaCarretera;
 
     public ClassCompra() {
     }
@@ -63,7 +66,48 @@ public class ClassCompra {
     public void setOpcionRetiro(int opcionRetiro) {
         this.opcionRetiro = opcionRetiro;
     }
+
+    public String getOpcionPagoDescr() {
+        return opcionPagoDescr;
+    }
+
+    public void setOpcionPagoDescr(String opcionPagoDescr) {
+        this.opcionPagoDescr = opcionPagoDescr;
+    }
+
+    public String getOpcionRetiroDescr() {
+        return opcionRetiroDescr;
+    }
+
+    public void setOpcionRetiroDescr(String opcionRetiroDescr) {
+        this.opcionRetiroDescr = opcionRetiroDescr;
+    }
+
+    public String getListaCarretera() {
+        return listaCarretera;
+    }
+
+    public void setListaCarretera(String listaCarretera) {
+        this.listaCarretera = listaCarretera;
+    }
     
+    @Override
+    public String toString() {
+        return "{\"comId\" : \"" + comId + "\" "
+                + ", \"empId\" : \"" + empId + "\" "
+                + ", \"CompradorPor\" : \"" + CompradorPor + "\" "
+                + ", \"total\" : \"" + total + "\" "
+                + ", \"opcionPago\" : \" " + opcionPago + "\" "
+                + ", \"opcionPagoDescr\" : \"" + opcionPagoDescr + "\" "
+                + ", \"opcionRetiro\" : \"" + opcionRetiro + "\" "
+                + ", \"opcionRetiroDescr\" : \"" + opcionRetiroDescr +"\" " 
+                + " }";
+    } 
     
-    
+    public String toStringListaCorta(){
+        return "{\"comId\" : \"" + comId + "\" "
+                + ", \"total\" : \"" + total + "\" "
+                + ", \"listaCarretera\" : \"" + listaCarretera + "\" " 
+                + "}";
+    }
 }

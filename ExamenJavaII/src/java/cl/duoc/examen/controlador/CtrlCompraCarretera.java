@@ -47,9 +47,9 @@ public class CtrlCompraCarretera {
         try {
             String sql = "select cc.cc_care_id, cc.cc_com_id, cc.cc_cantidad, cc.cc_total, c.care_nombre "
                     + " from tbl_compra_carretera cc "
-                    + " left join tbl_carretera c on c.care_id = cc.cc_care_id"
+                    + " left join tbl_carreteras c on c.care_id = cc.cc_care_id"
                     + " where cc_com_id = ? ";
-            cnx = Conexion.obtener();
+            cnx = Conexion.obtener(); 
             ps = cnx.prepareCall(sql);
             ps.setInt(1, idCompra);
             

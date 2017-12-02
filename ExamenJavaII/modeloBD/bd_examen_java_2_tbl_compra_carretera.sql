@@ -38,6 +38,7 @@ CREATE TABLE `tbl_compra_carretera` (
 
 LOCK TABLES `tbl_compra_carretera` WRITE;
 /*!40000 ALTER TABLE `tbl_compra_carretera` DISABLE KEYS */;
+INSERT INTO `tbl_compra_carretera` VALUES (1,2,3,0),(2,2,2,0),(3,2,10,0),(4,2,21,0),(1,3,1,0),(3,3,1,0),(1,4,12,0),(4,4,9,0),(1,5,1,0),(2,5,1,0),(3,5,1,0),(4,5,1,0),(1,6,12,0),(4,6,3,0),(1,7,23,0),(2,7,8,0),(2,8,4,0),(1,8,12,0);
 /*!40000 ALTER TABLE `tbl_compra_carretera` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-27 14:45:35
+-- Dump completed on 2017-12-02 19:56:53

@@ -117,7 +117,7 @@ public class CtrlEmpresa {
             if(ce.getEmpId() > 0) sql += " and emp_id=? ";
             if(ce.getEmpRut() != null) sql += " and emp_rut like concat(?,'%') ";
             if(ce.getEmpNombre() != null) sql += " and emp_nombre like concat(?, '%')";
-            
+            System.out.println(sql);
             cnx = Conexion.obtener();
             ps = cnx.prepareCall(sql);
             
@@ -127,7 +127,7 @@ public class CtrlEmpresa {
         
             rs = ps.executeQuery();
             
-            if(rs.next()){
+            while(rs.next()){
                 ClassEmpresa c =  new ClassEmpresa();
                 c.setEmpId(rs.getInt("emp_id"));
                 c.setEmpRut(rs.getString("emp_rut"));

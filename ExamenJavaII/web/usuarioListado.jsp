@@ -12,10 +12,11 @@
     CtrlUsuario ctrl = new CtrlUsuario();
     List<ClassUsuario> lus = ctrl.obtenerLista(new ClassUsuario());
 %>
-<div class="row">
-    <div class="col form-inline">
-        <h1 class="h1">Usuarios</h1>
-        <a href="usuarioAgregar.jsp">Agregar</a>
+
+<div class="row pb-25">
+    <div class="col ">
+        <h1 class="h1 float-left">Usuarios</h1>
+        <a href="usuarioAgregar.jsp" class="btn btn-primary float-right">Agregar</a> 
     </div>
 </div>
         
@@ -25,8 +26,8 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Usuario</th>
-                    <th>Opciones</th>
+                    <th>Usuario</th> 
+                    <th style="width: 200px;">Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +35,7 @@
                 <tr>
                     <td><%=us.getUsuNombre() %></td>
                     <td><%=us.getUsuUsuario() %></td> 
-                    <td><a href="usuarioModificar.jsp?id=<%=us.getUsuId() %>">modificar</a></td>
+                    <td ><a href="usuarioModificar.jsp?id=<%=us.getUsuId() %>" class="btn btn-link" title="Modificar">Modificar</a></td>
                 </tr>
                 <% }%>
             </tbody>

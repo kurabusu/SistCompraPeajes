@@ -42,5 +42,5 @@
                 </form>
             </div>
         </div>
-        <div class="container pt-50 mt-25 pb-50 mb-50">
+        <div class="container mt-25 pb-50 mb-50">
             

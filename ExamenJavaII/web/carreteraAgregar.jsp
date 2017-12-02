@@ -11,19 +11,19 @@
     </div>
 </div>
 <div class="row pt-25">
-    <form action="./ServletCarreteraGuardar" method="POST" class="col">
+    <form id="form-carretera" name="form-carretera" action="./ServletCarreteraGuardar" method="POST" class="col">
         <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control">
+                    <input type="text" id="nombre" name="nombre" class="form-control" required=>
                 </div>
             </div>
             <div class="w-100"></div>
             <div class="col">
                 <div class="form-group">
                     <label>Costo</label> 
-                    <input type="number" id="costo" name="costo" class="form-control">
+                    <input type="number" id="costo" name="costo" class="form-control" required>
                 </div>
             </div>
         </div>

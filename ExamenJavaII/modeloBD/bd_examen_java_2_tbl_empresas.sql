@@ -18,31 +18,29 @@ USE `bd_examen_java_2`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_compra`
+-- Table structure for table `tbl_empresas`
 --
 
-DROP TABLE IF EXISTS `tbl_compra`;
+DROP TABLE IF EXISTS `tbl_empresas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_compra` (
-  `com_id` int(11) NOT NULL AUTO_INCREMENT,
-  `emp_Id` int(11) NOT NULL,
-  `comprador` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `com_total` int(11) NOT NULL,
-  `com_opcion_pago` int(11) NOT NULL,
-  `com_opcion_retiro` int(11) NOT NULL,
-  PRIMARY KEY (`com_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+CREATE TABLE `tbl_empresas` (
+  `emp_id` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_rut` varchar(15) COLLATE utf8_spanish2_ci NOT NULL,
+  `emp_nombre` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
+  `emp_direccion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`emp_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_compra`
+-- Dumping data for table `tbl_empresas`
 --
 
-LOCK TABLES `tbl_compra` WRITE;
-/*!40000 ALTER TABLE `tbl_compra` DISABLE KEYS */;
-INSERT INTO `tbl_compra` VALUES (2,1,'jose tolosa',63500,2,2),(3,1,'jose tolosa',3600,1,1),(4,1,'jose tolosa',48000,2,2),(5,1,'jose',7100,1,2),(6,1,'jose tolosa',36000,1,2),(7,1,'asd asd asdas',74000,2,1),(8,2,'esteban',36000,2,2);
-/*!40000 ALTER TABLE `tbl_compra` ENABLE KEYS */;
+LOCK TABLES `tbl_empresas` WRITE;
+/*!40000 ALTER TABLE `tbl_empresas` DISABLE KEYS */;
+INSERT INTO `tbl_empresas` VALUES (1,'11111111','empresa 1','direccion 1'),(2,'222222222','empresa 2','direccion 2'),(3,'1234567890','jose ltmd','san carlos 1152');
+/*!40000 ALTER TABLE `tbl_empresas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

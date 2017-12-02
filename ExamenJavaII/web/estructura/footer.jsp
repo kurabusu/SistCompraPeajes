@@ -1,4 +1,4 @@
-        </div><!--container --> 
+        </div><!--container -->
         
         
     <footer class="footer mt-50">
@@ -8,6 +8,8 @@
     </footer>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/validaciones.js"></script> 
         <script type="text/javascript" src="js/master.js"></script>
     </body>
 </html>

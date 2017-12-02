@@ -14,9 +14,9 @@
 %>
 
 <div class="row pb-25">
-    <div class="col form-inline">
-        <h1>Carretera</h1>
-        <a href="carreteraAgregar.jsp">Agregar</a>
+    <div class="col ">
+        <h1 class="h1 float-left">Carretera</h1>
+        <a href="carreteraAgregar.jsp" class="btn btn-primary float-right">Agregar</a>
     </div>
 </div>
 <div class="row">
@@ -26,7 +26,7 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Costo</th>
-                    <th>Opciones</th>
+                    <th style="width: 200px;">Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +34,11 @@
                 <tr>
                     <td><%=c.getCareNombre() %></td>
                     <td><%=c.getCareCosto() %></td>
-                    <td><a href="carreteraModificar.jsp?id=<%=c.getCareId() %>">modificar</a></td>
+                    <td>
+                        <a href="carreteraModificar.jsp?id=<%=c.getCareId() %>" class="btn btn-link" title="Modificar">Modificar</a>
+                        
+                        <a href="#" class="btn btn-link" title="Ver mapa"> <i class="fa fa-map-o" aria-hidden="true"></i></a>
+                    </td>
                 </tr> 
                 <%  }%>
             </tbody>

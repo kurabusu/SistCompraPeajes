@@ -13,7 +13,7 @@
 </div>
 
 <div class="row pt-25">
-    <form action="./ServletEmpresaGuardar" method="POST" class="col">
+    <form id="form-empresa" name="form-empresa" action="./ServletEmpresaGuardar" method="POST" class="col">
         <div class="row">
             <div class="col">
                 <div class="form-group">
