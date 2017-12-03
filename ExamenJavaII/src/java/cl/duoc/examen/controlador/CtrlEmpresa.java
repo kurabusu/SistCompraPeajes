@@ -2,6 +2,7 @@ package cl.duoc.examen.controlador;
 
 import cl.duoc.examen.db.Conexion;
 import cl.duoc.examen.modelo.ClassEmpresa;
+import cl.duoc.examen.util.Logs;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,7 +37,7 @@ public class CtrlEmpresa {
             
             return b > 0;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlEmpresa ingresar");
             return false;
         }
     }
@@ -64,7 +65,7 @@ public class CtrlEmpresa {
             
             return b > 0;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlEmpresa modificar");
             return false;
         }
     }
@@ -100,7 +101,7 @@ public class CtrlEmpresa {
             
             return ce;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlEmpresa obtener");
             return new ClassEmpresa();
         }
     }
@@ -142,7 +143,7 @@ public class CtrlEmpresa {
             
             return lce;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlEmpresa obtenerLista");
             return new ArrayList<ClassEmpresa>();
         }
     }

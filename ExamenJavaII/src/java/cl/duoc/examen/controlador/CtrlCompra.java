@@ -7,6 +7,7 @@ package cl.duoc.examen.controlador;
 
 import cl.duoc.examen.db.Conexion;
 import cl.duoc.examen.modelo.ClassCompra;
+import cl.duoc.examen.util.Logs;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,9 +22,9 @@ import java.util.List;
 public class CtrlCompra {
     
     /**
-     * 
-     * @param cc
-     * @return 
+     * metodo para ingresar una nueva compra.
+     * @param cc recibe un objeto de tipo ClassCompra con la informacion a guardar.
+     * @return devuelve un int que sera el id de la compra ingresada.
      */
     public int ingresar(ClassCompra cc){
         Connection cnx = null;
@@ -54,15 +55,15 @@ public class CtrlCompra {
             ps.close();
             return id;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlCompra ingresar");
             return 0;
         }
     }
     
     /**
-     * 
-     * @param id
-     * @return 
+     * metodo para obtener una compra.
+     * @param id recibe un int que es el id de la compra a obtener.
+     * @return devuelve un objeto de tipo ClassCompra con la informacion obetenida.
      */
     public ClassCompra obtener(int id){
         Connection cnx = null;
@@ -96,7 +97,7 @@ public class CtrlCompra {
             
             return  cc;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlCompra obtener");
             return new ClassCompra();
         }
     }
@@ -158,7 +159,7 @@ public class CtrlCompra {
             
             return lcc;
         }catch(Exception e){
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlCompra obtenerLista");
             return new ArrayList<ClassCompra>(); 
         }
     }

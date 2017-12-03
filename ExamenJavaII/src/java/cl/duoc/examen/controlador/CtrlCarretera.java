@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cl.duoc.examen.controlador;
 
 import cl.duoc.examen.db.Conexion;
 import cl.duoc.examen.modelo.ClassCarretera;
+import cl.duoc.examen.util.Logs;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,10 +11,15 @@ import java.util.List;
 
 /**
  *
- * @author jose tolosa
+ * @author 
  */
 public class CtrlCarretera {
  
+    /**
+     * Metodo para ingresar una nueva carretera.
+     * @param cc recibe un objeto de tipo ClassCarretera con la informacion a ingresar.
+     * @return devuelve un true en caso de haber guardado, en caso contrario un false.
+     */
     public boolean ingresar(ClassCarretera cc){
         Connection cnx = null;
         PreparedStatement ps = null;
@@ -33,12 +34,17 @@ public class CtrlCarretera {
             
             return b > 0;
         } catch (Exception e) {
+            Logs.log(e, "SEVERE", "error en CtrlCarretera ingresar");
             return false;
         }
         
     }
     
-    
+    /**
+     * Metodo para modificar una carretera.
+     * @param cc recibe un objeto de tipo ClassCarretera con la informacion a modificar.
+     * @return devuelve un true en caso de haber modificado, en caso contrario un false.
+     */
     public boolean modificar(ClassCarretera cc){
         Connection cnx = null;
         PreparedStatement ps = null;
@@ -54,12 +60,16 @@ public class CtrlCarretera {
             
             return b > 0;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlCarretera modificar");
             return false;
         }
     }
     
-    
+    /**
+     * metodo para obtener una carretera.
+     * @param id recibe un int que es el id de la carretera a buscar
+     * @return devuelve un objeto de tipo ClassCarretera con la informacion obtenida,
+     */
     public ClassCarretera obtener(int id){
         Connection cnx = null;
         PreparedStatement ps = null;
@@ -81,6 +91,7 @@ public class CtrlCarretera {
             
             return cc;
         } catch (Exception e) {
+            Logs.log(e, "SEVERE", "error en CtrlCarretera obtener");
             return new ClassCarretera();
         }
         
@@ -120,7 +131,7 @@ public class CtrlCarretera {
             }
             return lcc;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlCarretera obtenerLista");
             return new ArrayList<ClassCarretera>();
         }
     }

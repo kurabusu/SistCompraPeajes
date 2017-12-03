@@ -2,6 +2,7 @@ package cl.duoc.examen.controlador;
 
 import cl.duoc.examen.db.Conexion;
 import cl.duoc.examen.modelo.ClassCompraCarretera;
+import cl.duoc.examen.util.Logs;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,7 +34,7 @@ public class CtrlCompraCarretera {
             return b > 0;
             
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlCompraCarretera ingresar");
             return false;
         }
     }
@@ -68,7 +69,7 @@ public class CtrlCompraCarretera {
             
             return lista;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlCompraCarretera obtenerLista");
             return new ArrayList<ClassCompraCarretera>();
         }
     }

@@ -7,6 +7,7 @@ package cl.duoc.examen.controlador;
 
 import cl.duoc.examen.db.Conexion;
 import cl.duoc.examen.modelo.ClassUsuario;
+import cl.duoc.examen.util.Logs;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -52,7 +53,7 @@ public class CtrlUsuario {
             
             return us;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlUsuario login");
             return new ClassUsuario();
         }
     }
@@ -80,7 +81,7 @@ public class CtrlUsuario {
             ps.close();
             return b > 0;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlUsuario ingresar");
             return r; 
         }
     }
@@ -107,7 +108,7 @@ public class CtrlUsuario {
             ps.close();
             return b > 0;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlUsuario modificar");
             return r; 
         }
     }
@@ -139,7 +140,7 @@ public class CtrlUsuario {
             
             return us;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlUsuario obtener");
             return new ClassUsuario();
         }
     }
@@ -183,7 +184,7 @@ public class CtrlUsuario {
             
             return lus;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logs.log(e, "SEVERE", "error en CtrlUsuario obtenerLista");
             return new  ArrayList<ClassUsuario>();
         }
     }
