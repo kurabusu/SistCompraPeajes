@@ -63,7 +63,7 @@ public class CtrlCompra {
     /**
      * metodo para obtener una compra.
      * @param id recibe un int que es el id de la compra a obtener.
-     * @return devuelve un objeto de tipo ClassCompra con la informacion obetenida.
+     * @return devuelve un objeto de tipo ClassCompra con la informacion obetenida. 
      */
     public ClassCompra obtener(int id){
         Connection cnx = null;

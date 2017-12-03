@@ -16,7 +16,10 @@ $( function() {
                         " <tr> "
                         +" <td>"+d[i].listaCarretera+"</td> "
                         +" <td>"+d[i].total+"</td> "
-                        +" <td><a href=\"pedidosBoleta.jsp?id="+d[i].comId+"\" class=\"btn btn-link\"><i class=\"fa fa-plus\" aria-hidden=\"true\"></i></a></td> " 
+                        +" <td>"
+                        +" <a href='pedidosAgregarNuevo.jsp?id="+d[i].comId+"' class='btn btn-link'><i class=\"fa fa-plus\" aria-hidden=\"true\"></i></a>"
+                        +" <a href=\"pedidosBoleta.jsp?id="+d[i].comId+"\" class=\"btn btn-link\"><i class=\"fa fa-ticket\" aria-hidden=\"true\"></i></a>"
+                        +" </td> " 
                         +" </tr>"); 
                 }
             }else{
@@ -102,5 +105,6 @@ $( function() {
         $("span.total").html(total);
         $("#precioTotal").val(total);
     }
-
+    
+    optCambioCantidad();
 });
