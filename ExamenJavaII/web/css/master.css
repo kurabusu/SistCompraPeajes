@@ -29,7 +29,9 @@ body{
     padding-bottom: 70px;
 }
 
-
+#map {
+    height: 500px;
+}
 
 .mt-25{
     margin-top: 25px;

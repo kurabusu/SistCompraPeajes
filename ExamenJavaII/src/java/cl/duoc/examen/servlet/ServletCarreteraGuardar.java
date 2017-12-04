@@ -9,15 +9,17 @@ import cl.duoc.examen.controlador.CtrlCarretera;
 import cl.duoc.examen.modelo.ClassCarretera;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author jose tolosa
+ * @author 
  */
 @WebServlet(name = "ServletCarreteraGuardar", urlPatterns = {"/ServletCarreteraGuardar"})
 public class ServletCarreteraGuardar extends HttpServlet {
@@ -36,7 +38,9 @@ public class ServletCarreteraGuardar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           
+            RequestDispatcher dispatcher;
+            HttpSession session = request.getSession(true);
+            
             String nombre = request.getParameter("nombre");
             String costo = request.getParameter("costo");
             
@@ -48,25 +52,20 @@ public class ServletCarreteraGuardar extends HttpServlet {
             
             boolean b = ctrl.ingresar(cc);
             if(b){
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Bla!</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>Guardado</h1>");
-                out.println("</body>");
-                out.println("</html>");
+                session.setAttribute("mensaje", "Carreta se guardo correctamente");
+                session.setAttribute("tipo", "Carretera");
+                session.setAttribute("link", "./carreteraListado.jsp");
+
+                dispatcher = request.getServletContext().getRequestDispatcher("/ventanaMensaje.jsp");
+                dispatcher.forward(request, response); 
+                
             }else{ 
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Bla!</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>No Guardado</h1>");
-                out.println("</body>");
-                out.println("</html>");
+                session.setAttribute("mensaje", "Carreta no se guardo correctamente");
+                session.setAttribute("tipo", "Carretera");
+                session.setAttribute("link", "./carreteraAgregar.jsp");
+            
+                dispatcher = request.getServletContext().getRequestDispatcher("/ventanaMensaje.jsp");
+                dispatcher.forward(request, response);
             }
             
         }

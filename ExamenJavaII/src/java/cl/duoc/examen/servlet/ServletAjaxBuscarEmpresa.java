@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author jose tolosa
+ * @author
  */
 @WebServlet(name = "ServletAjaxBuscarEmpresa", urlPatterns = {"/ServletAjaxBuscarEmpresa"})
 public class ServletAjaxBuscarEmpresa extends HttpServlet {

@@ -9,15 +9,17 @@ import cl.duoc.examen.controlador.CtrlUsuario;
 import cl.duoc.examen.modelo.ClassUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author jose tolosa
+ * @author 
  */
 @WebServlet(name = "ServletUsuarioGuardar", urlPatterns = {"/ServletUsuarioGuardar"})
 public class ServletUsuarioGuardar extends HttpServlet {
@@ -35,6 +37,9 @@ public class ServletUsuarioGuardar extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            RequestDispatcher dispatcher;
+            HttpSession session = request.getSession(true);
+            
             /* TODO output your page here. You may use following sample code. */
             String nombre = request.getParameter("nombre");
             String usuario = request.getParameter("usuario");
@@ -48,25 +53,19 @@ public class ServletUsuarioGuardar extends HttpServlet {
             CtrlUsuario ctrl = new CtrlUsuario();
             boolean b = ctrl.ingresar(us);
             if(b){ 
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Bla!</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>Ingresado</h1>");
-                out.println("</body>");
-                out.println("</html>");
+                session.setAttribute("mensaje", "Usuario se guardo correctamente");
+                session.setAttribute("tipo", "Usuario");
+                session.setAttribute("link", "./usuarioListado.jsp");
+            
+                dispatcher = request.getServletContext().getRequestDispatcher("/ventanaMensaje.jsp");
+                dispatcher.forward(request, response);
             }else{
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Bla!</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>No ingresado</h1>");
-                out.println("</body>");
-                out.println("</html>");
+                session.setAttribute("mensaje", "Usuario no se guardo correctamente");
+                session.setAttribute("tipo", "Usuario");
+                session.setAttribute("link", "./usuarioAgregar.jsp");
+            
+                dispatcher = request.getServletContext().getRequestDispatcher("/ventanaMensaje.jsp");
+                dispatcher.forward(request, response);
             }
             
         }

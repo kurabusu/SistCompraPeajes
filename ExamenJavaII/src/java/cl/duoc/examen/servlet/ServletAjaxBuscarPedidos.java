@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author jose tolosa
+ * @author
  */
 @WebServlet(name = "ServletAjaxBuscarPedidos", urlPatterns = {"/ServletAjaxBuscarPedidos"})
 public class ServletAjaxBuscarPedidos extends HttpServlet {

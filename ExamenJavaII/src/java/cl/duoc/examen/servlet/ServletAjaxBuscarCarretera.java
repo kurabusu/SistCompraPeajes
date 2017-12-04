@@ -6,12 +6,9 @@
 package cl.duoc.examen.servlet;
 
 import cl.duoc.examen.controlador.CtrlCarretera;
-import cl.duoc.examen.controlador.CtrlEmpresa;
 import cl.duoc.examen.modelo.ClassCarretera;
-import cl.duoc.examen.modelo.ClassEmpresa;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author jose tolosa
+ * @author 
  */
 @WebServlet(name = "ServletAjaxBuscarCarretera", urlPatterns = {"/ServletAjaxBuscarCarretera"})
 public class ServletAjaxBuscarCarretera extends HttpServlet {

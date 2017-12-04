@@ -1,3 +1,5 @@
+ var map;
+   
 $( function() {
     //buscarPedidos 
     $("#bBuscarPedidos").on("click", function(){
@@ -80,10 +82,10 @@ $( function() {
         }
     });
     
-    
-    
-    var optCambioCantidad  = function(){
-        $('input[name^="cantidades"]').keyup(function(event){
+    var optCambioCantidad  = function(){ 
+        $('input[name^="cantidades"]').click(function(event){
+            sacarTotal(); 
+        }).keyup(function(event){
             sacarTotal(); 
         })
         
@@ -106,10 +108,71 @@ $( function() {
         $("#precioTotal").val(total);
     }
     
+    
+    
+    
     optCambioCantidad();
 });
 
 
+function mostrarMapa(direccion){ 
+    var geocoder = null;
+    map = null;
+    $('.bd-example-modal-lg').modal("show"); 
+    
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -32.5587606, lng:-73.4689263},   
+        componentRestrictions: {'country': 'cl'},
+        zoom: 8
+    });
+    
+    geocoder = new google.maps.Geocoder(); 
+    infowindow = new google.maps.InfoWindow;
+    geocoder.geocode({'address': direccion+", chile" }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            var marker = null; 
+            //console.log(results)
+            if (results[0]) {
+                marker = new google.maps.Marker({
+                    map: map, 
+                    position: results[0].geometry.location,
+                    title: direccion
+                });
+                var infowindow = new google.maps.InfoWindow({ 
+                    content: results[0].formatted_address
+                });
+
+                
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+
+                //console.log("infowindow",infowindow);
+                //infowindow.setContent(results[0].formatted_address || direccion);  
+                //infowindow.open(map, marker);
+            }else{
+
+            }
+        } else { 
+            console.log("geocoder else")
+            alert('No se puede encontrar el nombre de la carretera dentro del mapa.');
+        } 
+    });
+    
+    setTimeout(function() {
+        console.log("setTimeout");
+        google.maps.event.trigger(map, 'resize');    
+    }, 1000);  
+} 
+   
+function initMap() {
+    /*map = new google.maps.Map(document.getElementById('map'), {
+       //center: {lat: -33.4581345, lng:-20.20 },  
+        zoom: 8
+    });
+    google.maps.event.trigger(map, 'resize'); */
+}
+    
 function print(nombreDiv) {
      var contenido= document.getElementById(nombreDiv).innerHTML;
      var contenidoOriginal= document.body.innerHTML;
@@ -117,3 +180,4 @@ function print(nombreDiv) {
      window.print();
      document.body.innerHTML = contenidoOriginal;
 }
+

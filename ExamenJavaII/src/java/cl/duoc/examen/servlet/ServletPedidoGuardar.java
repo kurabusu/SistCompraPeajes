@@ -11,15 +11,17 @@ import cl.duoc.examen.modelo.ClassCompra;
 import cl.duoc.examen.modelo.ClassCompraCarretera;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author jose tolosa
+ * @author
  */
 @WebServlet(name = "ServletPedidoGuardar", urlPatterns = {"/ServletPedidoGuardar"})
 public class ServletPedidoGuardar extends HttpServlet {
@@ -38,6 +40,10 @@ public class ServletPedidoGuardar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            
+            RequestDispatcher dispatcher;
+            HttpSession session = request.getSession(true);
+            
             CtrlCompra ctrl =  new CtrlCompra();
             CtrlCompraCarretera ctrlCcc = new CtrlCompraCarretera();
             
