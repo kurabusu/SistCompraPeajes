@@ -33,9 +33,7 @@
                     <div class="form-group">
                         <input type="submit" name="btnLogin" value="Ingresar" class="btn btn-success w-100">
                     </div>
-                    <div class="form-group text-center">
-                        <a href="registro.jsp">Registro</a>
-                    </div>
+                  
                     <% if (ses.getAttribute("error_login") != null){ %>
                     <%= ses.getAttribute("error_login") %>
                     <% ses.removeAttribute("error_login");}%>
