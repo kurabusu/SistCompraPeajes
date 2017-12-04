@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="css/master.css"> 
     </head> 
     <body> 
-        <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <ul class="navbar-nav mr-auto"> 
                     <li class="nav-item"> 
@@ -42,5 +42,5 @@
                 </form>
             </div>
         </div>
-        <div class="container mt-25 pb-50 mb-50">
+        <div class="container mt-25 pb-50 mb-50 contenedor">
             

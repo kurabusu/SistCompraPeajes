@@ -1,4 +1,34 @@
+html, body.index{ 
+    height: 100%;
+}
 
+body{
+    background-image: url('../img/background_.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+.index > div{
+    top: 25%;
+    position: relative;   
+}
+
+.index form{
+    background-color: rgba(255, 2255,255, 0.7);
+    padding: 90px 10px;
+    margin-top: 30%;
+}
+
+.contenedor{
+    background-color: rgba(255,255,255,0.95);
+    padding: 40px 10px;
+}
+
+.boleta{
+    border: 1px solid #c2baba;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
 
 
 
@@ -33,7 +63,7 @@
 
 /* footer */
 .footer {
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 60px;

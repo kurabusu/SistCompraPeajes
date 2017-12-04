@@ -124,7 +124,7 @@
                 
             <div class="col">
                 <table class="table" id="PedidoCarreteras">
-                    <thead>
+                    <thead class="thead-dark">
                         <tr>
                             <th>Cerretera</th>
                             <th>Cantidad</th>

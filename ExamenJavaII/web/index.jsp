@@ -19,7 +19,7 @@
     <body class="index">
         <div class="container-fluid">
             <div class="row">
-                <form action="./ServletIndex" method="POST" class="col-3 offset-7">
+                <form action="./ServletIndex" method="POST" class="col-4 offset-4">
                     <div class="form-group">
                         <label class="" for="txtUsuario">Usuario</label>
                         <input id="txtUsuario" type="text" name="txtUsuario" class="form-control" required>

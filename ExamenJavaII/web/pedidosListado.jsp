@@ -32,7 +32,7 @@
 <div class="row">
     <div class="col">
         <table class="table" id="tablaPedidosLista">
-            <thead>
+            <thead class="thead-dark">
                 <tr>
                     <th>Pedido</th>
                     <th>Total</th>

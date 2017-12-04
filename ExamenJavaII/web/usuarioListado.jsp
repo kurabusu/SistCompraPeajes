@@ -21,9 +21,9 @@
 </div>
         
 <div class="row">
-    <div class="col">
+    <div class="col"> 
         <table class="table">
-            <thead>
+            <thead class="thead-dark">
                 <tr>
                     <th>Nombre</th>
                     <th>Usuario</th> 

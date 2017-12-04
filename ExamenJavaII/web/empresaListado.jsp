@@ -23,7 +23,7 @@
 <div class="row">
     <div class="col"> 
         <table class="table">
-            <thead>
+            <thead class="thead-dark">
                 <tr>
                     <th>Rut</th>
                     <th>Nombre</th>
