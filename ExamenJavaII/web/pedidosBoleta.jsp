@@ -74,8 +74,8 @@
     </div>
 </div>
 <div class="row">
-    <div class="col">
-        <button type="button" onclick="print('boleta')"></button>
+    <div class="col"> 
+        <button type="button" onclick="print('boleta')" class="btn btn-primary">Imprimir</button>
     </div>
 </div>
                 
