@@ -73,10 +73,10 @@
             
     </div>
 </div>
-<div class="row">
+<!--div class="row">
     <div class="col"> 
         <button type="button" onclick="print('boleta')" class="btn btn-primary">Imprimir</button>
     </div>
-</div>
-                
+</div-->
+                 
 <%@include file="estructura/footer.jsp" %>
