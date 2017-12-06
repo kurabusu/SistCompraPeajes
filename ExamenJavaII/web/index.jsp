@@ -38,10 +38,10 @@
                     <%= ses.getAttribute("error_login") %>
                     <% ses.removeAttribute("error_login");}%>
                 </form> 
-            </div>
+            </div> 
         </div>
         
-        
+        <script type="text/javascript" src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/master.js"></script>
     </body>

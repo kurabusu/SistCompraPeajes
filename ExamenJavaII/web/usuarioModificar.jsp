@@ -40,6 +40,15 @@
                     <input type="text" id="usuarioBd" name="usuarioBd" class="form-control" value="<%=us.getUsuUsuario() %>" readonly/>
                 </div> 
             </div>
+            
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Clave</label>
+                    <input type="password" id="clave" name="clave" class="form-control" required />
+                </div>
+            </div>
+            
         </div>
         
         <div class="w-100 text-center">

@@ -42,10 +42,12 @@ public class ServletUsuarioModificar extends HttpServlet {
             
             String id = request.getParameter("id");
             String nombre = request.getParameter("nombre");
+            String clave = request.getParameter("clave");
             
             ClassUsuario us =  new ClassUsuario();
             us.setUsuId(Integer.parseInt(id)); 
             us.setUsuNombre(nombre);
+            us.setUsuClave(clave);
             
             CtrlUsuario ctrl = new CtrlUsuario();
             boolean b = ctrl.modificar(us);

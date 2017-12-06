@@ -97,11 +97,12 @@ public class CtrlUsuario {
 
         boolean r = false;
         try {
-            String sql = "update tbl_usuarios set usu_nombre=? where usu_id=?";
+            String sql = "update tbl_usuarios set usu_nombre=?, usu_clave=? where usu_id=?";
             cnx = Conexion.obtener();
             ps = cnx.prepareCall(sql);
-            ps.setString(1, u.getUsuNombre()); 
-            ps.setInt(2, u.getUsuId());
+            ps.setString(1, u.getUsuNombre());  
+            ps.setString(2, DigestUtils.sha1Hex(u.getUsuClave())); 
+            ps.setInt(3, u.getUsuId());
             
             int b = ps.executeUpdate();
             
