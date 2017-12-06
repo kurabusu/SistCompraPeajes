@@ -30,7 +30,7 @@ CREATE TABLE `tbl_usuarios` (
   `usu_usuario` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `usu_clave` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
   PRIMARY KEY (`usu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `tbl_usuarios` (
 
 LOCK TABLES `tbl_usuarios` WRITE;
 /*!40000 ALTER TABLE `tbl_usuarios` DISABLE KEYS */;
-INSERT INTO `tbl_usuarios` VALUES (1,'joseasdasdas','jose','8cb2237d0679ca88db6464eac60da96345513964');
+INSERT INTO `tbl_usuarios` VALUES (1,'administrador','admin','8cb2237d0679ca88db6464eac60da96345513964');
 /*!40000 ALTER TABLE `tbl_usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-02 19:56:52
+-- Dump completed on 2017-12-06 11:05:19

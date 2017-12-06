@@ -29,7 +29,7 @@ CREATE TABLE `tbl_carreteras` (
   `care_nombre` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `care_costo` int(11) DEFAULT NULL,
   PRIMARY KEY (`care_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,6 @@ CREATE TABLE `tbl_carreteras` (
 
 LOCK TABLES `tbl_carreteras` WRITE;
 /*!40000 ALTER TABLE `tbl_carreteras` DISABLE KEYS */;
-INSERT INTO `tbl_carreteras` VALUES (1,'General Velásquez',2500),(2,'Norte-Sur',1500),(3,'Oriente-Poniente',1100),(4,'Kennedy',2000),(5,'as',990);
 /*!40000 ALTER TABLE `tbl_carreteras` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-02 19:56:53
+-- Dump completed on 2017-12-06 11:05:20
