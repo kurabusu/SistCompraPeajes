@@ -29,8 +29,9 @@ CREATE TABLE `tbl_empresas` (
   `emp_rut` varchar(15) COLLATE utf8_spanish2_ci NOT NULL,
   `emp_nombre` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
   `emp_direccion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
-  PRIMARY KEY (`emp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+  PRIMARY KEY (`emp_id`),
+  UNIQUE KEY `emp_rut_UNIQUE` (`emp_rut`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +40,6 @@ CREATE TABLE `tbl_empresas` (
 
 LOCK TABLES `tbl_empresas` WRITE;
 /*!40000 ALTER TABLE `tbl_empresas` DISABLE KEYS */;
-INSERT INTO `tbl_empresas` VALUES (1,'11111111','empresa 1','direccion 1'),(2,'222222222','empresa 2','direccion 2'),(3,'1234567890','jose ltmd','san carlos 1152');
 /*!40000 ALTER TABLE `tbl_empresas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-02 19:56:52
+-- Dump completed on 2017-12-06 11:05:20
