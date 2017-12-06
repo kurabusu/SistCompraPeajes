@@ -52,7 +52,7 @@ public class ServletCarreteraGuardar extends HttpServlet {
             
             boolean b = ctrl.ingresar(cc);
             if(b){
-                session.setAttribute("mensaje", "Carreta se guardo correctamente");
+                session.setAttribute("mensaje", "Carretera se guardo correctamente");
                 session.setAttribute("tipo", "Carretera");
                 session.setAttribute("link", "./carreteraListado.jsp");
 
@@ -60,7 +60,7 @@ public class ServletCarreteraGuardar extends HttpServlet {
                 dispatcher.forward(request, response); 
                 
             }else{ 
-                session.setAttribute("mensaje", "Carreta no se guardo correctamente");
+                session.setAttribute("mensaje", "Carretera no se guardo correctamente");
                 session.setAttribute("tipo", "Carretera");
                 session.setAttribute("link", "./carreteraAgregar.jsp");
             

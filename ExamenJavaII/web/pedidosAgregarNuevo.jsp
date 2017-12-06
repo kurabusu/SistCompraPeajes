@@ -151,7 +151,7 @@
                 <table class="table" id="PedidoCarreteras">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Cerretera</th>
+                            <th>Carretera</th>
                             <th>Cantidad</th>
                             <th></th>
                         </tr>

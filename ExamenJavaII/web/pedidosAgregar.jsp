@@ -108,7 +108,7 @@
                 <div class="form-group">
                     <div class="form-inline">
                         <select id="selCarreteras" name="selCarreteras" class="form-control col"> 
-                            <option value="">Selecionar</option>
+                            <option value="">Seleccionar</option>
                             <%for (ClassCarretera c : lcc) { %>
                             <option value="<%=c.getCareId() %>"><%=c.getCareNombre() %></option>
                             <% }%>
@@ -126,7 +126,7 @@
                 <table class="table" id="PedidoCarreteras">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Cerretera</th>
+                            <th>Carretera</th>
                             <th>Cantidad</th>
                             <th></th>
                         </tr>
