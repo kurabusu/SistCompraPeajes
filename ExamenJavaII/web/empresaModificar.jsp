@@ -10,7 +10,7 @@
 <%
     String rId = (String)request.getParameter("id");
     if(rId == null){
-        response.sendRedirect("usuarioListado.jsp");
+        response.sendRedirect("empresaListado.jsp");
     }
     int id = Integer.parseInt(request.getParameter("id"));
     CtrlEmpresa ctrl = new CtrlEmpresa();
@@ -20,7 +20,7 @@
 %>
 <div class="row pt-25"> 
     <div class="col"> 
-        <h1 class="h1">Usuario modificar</h1>
+        <h1 class="h1">Modificar Empresa</h1>
     </div>
 </div>
 

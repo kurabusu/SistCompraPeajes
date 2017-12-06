@@ -8,7 +8,7 @@
 <%@include file="estructura/header.jsp" %>
 <div class="row pt-25"> 
     <div class="col">
-        <h1 class="h1">Usuario agregar</h1>
+        <h1 class="h1">Agregar Empresa</h1>
     </div>
 </div>
 
